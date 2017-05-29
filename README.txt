@@ -20,11 +20,6 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to 'Appearance' » 'Customize' » 'Admin Maintenance' and put the Administration Screens into maintenance mode if necessary.
 
-== Screenshots ==
-
-1. ...
-2. ...
-
 == Changelog ==
 
 = 1.0 =
