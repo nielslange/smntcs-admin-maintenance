@@ -1,4 +1,4 @@
-=== Admin Maintenance ===
+=== SMNTCS Admin Maintenance ===
 Contributors: nielslange
 Donate link: 
 Tags: admin maintenance, admin, maintenance, maintenance mode 
