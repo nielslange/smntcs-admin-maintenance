@@ -7,10 +7,10 @@
  * Author URI: https://nielslange.com
  * Text Domain: smntcs-wapuu-widget
  * Domain Path: /languages/
- * Version: 1.1
+ * Version: 1.2
  * Requires at least: 3.4
  * Tested up to: 4.9
- * License: GPL2
+ * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
