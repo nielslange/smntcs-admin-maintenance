@@ -23,9 +23,6 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 
 == Changelog ==
 
-= 1.3 =
-* Added PHP CodeSniffer
-
 = 1.2 =
 * README.md
 
