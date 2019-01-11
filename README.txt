@@ -5,11 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: admin maintenance, admin, maintenance, maintenance mode
 Requires at least: 3.4
 Tested up to: 5.0
-<<<<<<< HEAD
-Stable tag: 1.3
-=======
 Stable tag: 1.2
->>>>>>> Tested up to 5.0
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
