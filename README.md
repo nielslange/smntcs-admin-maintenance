@@ -1,8 +1,8 @@
 # SMNTCS Admin Maintenance
 
 [![](https://img.shields.io/github/license/nielslange/smntcs-admin-maintenance.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-[![](https://plugintests.com/plugins/smntcs-adobe-typekit-fonts/wp-badge.svg)](https://plugintests.com/plugins/smntcs-adobe-typekit-fonts/latest)
-[![](https://plugintests.com/plugins/smntcs-adobe-typekit-fonts/php-badge.svg)](https://plugintests.com/plugins/smntcs-adobe-typekit-fonts/latest)
+[![](https://plugintests.com/plugins/smntcs-admin-maintenance/wp-badge.svg)](https://plugintests.com/plugins/smntcs-admin-maintenance/latest)
+[![](https://plugintests.com/plugins/smntcs-admin-maintenance/php-badge.svg)](https://plugintests.com/plugins/smntcs-admin-maintenance/latest)
 [![](https://img.shields.io/wordpress/plugin/dt/smntcs-admin-maintenance.svg)](https://wordpress.org/plugins/smntcs-admin-maintenance/)
 [![](https://img.shields.io/wordpress/plugin/v/smntcs-admin-maintenance.svg)](https://wordpress.org/plugins/smntcs-admin-maintenance/)
 [![](https://img.shields.io/github/tag/nielslange/smntcs-admin-maintenance.svg)](https://wordpress.org/plugins/smntcs-admin-maintenance/)
