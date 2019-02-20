@@ -4,8 +4,8 @@ Contributors: nielslange
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VELSE6W88MXJA
 Tags: admin maintenance, admin, maintenance, maintenance mode
 Requires at least: 3.4
-Tested up to: 5.0
-Stable tag: 1.2
+Tested up to: 5.1
+Stable tag: 1.3
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,9 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 3. Go to 'Appearance' » 'Customize' » 'Admin Maintenance' and put the Administration Screens into maintenance mode if necessary.
 
 == Changelog ==
+
+= 1.3 =
+* Tested up to 5.1
 
 = 1.2 =
 * README.md
