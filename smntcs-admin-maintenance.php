@@ -100,7 +100,7 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
  *
  * @param bool $input The input to check.
  *
- * @return null\integer
+ * @return null|integer
  */
 function smntcs_admin_maintenance_sanitize_integer( $input ) {
 	return ( is_int( $input ) ? $input : null );
