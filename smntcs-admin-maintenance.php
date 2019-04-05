@@ -3,9 +3,9 @@
  * Plugin Name: SMNTCS Admin Maintenance
  * Plugin URI: https://github.com/nielslange/smntcs-admin-maintenance
  * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
- * Author: Niels Lange
- * Author URI: https://nielslange.com
- * Text Domain: smntcs-wapuu-widget
+ * Author: Niels Lange <info@nielslange.de>
+ * Author URI: https://nielslange.de
+ * Text Domain: smntcs-admin-maintenance
  * Domain Path: /languages/
  * Version: 1.4
  * Requires at least: 3.4
