@@ -3,9 +3,9 @@
  * Plugin Name: SMNTCS Admin Maintenance
  * Plugin URI: https://github.com/nielslange/smntcs-admin-maintenance
  * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
- * Author: Niels Lange <info@nielslange.de>
- * Author URI: https://nielslange.de
- * Text Domain: smntcs-admin-maintenance
+ * Author: Niels Lange
+ * Author URI: https://nielslange.com
+ * Text Domain: smntcs-wapuu-widget
  * Domain Path: /languages/
  * Version: 1.4
  * Requires at least: 3.4
@@ -59,38 +59,37 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 	$wp_customize->add_setting(
 		'smntcs_admin_maintenance_enable',
 		array(
-			'default' => false,
-			'type'    => 'option',
+			'default'           => false,
+			'type'              => 'option',
+			'callback_function' => 'smntcs_admin_maintenance_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'smntcs_admin_maintenance_enable',
 		array(
-			'label'             => __( 'Enable Admin Maintenance', 'smntcs-admin-maintenance' ),
-			'section'           => 'smntcs_admin_maintenance_section',
-			'type'              => 'checkbox',
-			'callback_function' => 'smntcs_admin_maintenance_sanitize_checkbox',
+			'label'   => __( 'Enable Admin Maintenance', 'smntcs-admin-maintenance' ),
+			'section' => 'smntcs_admin_maintenance_section',
+			'type'    => 'checkbox',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'smntcs_admin_maintenance_uid',
 		array(
-			'default' => '',
-			'type'    => 'option',
-
+			'default'           => '',
+			'type'              => 'option',
+			'callback_function' => 'smntcs_admin_maintenance_sanitize_integer',
 		)
 	);
 
 	$wp_customize->add_control(
 		'smntcs_admin_maintenance_uid',
 		array(
-			'label'             => __( 'Grant access to', 'smntcs-admin-maintenance' ),
-			'section'           => 'smntcs_admin_maintenance_section',
-			'type'              => 'select',
-			'choices'           => $choices,
-			'callback_function' => 'smntcs_admin_maintenance_sanitize_integer',
+			'label'   => __( 'Grant access to', 'smntcs-admin-maintenance' ),
+			'section' => 'smntcs_admin_maintenance_section',
+			'type'    => 'select',
+			'choices' => $choices,
 		)
 	);
 }
@@ -103,7 +102,11 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
  * @return null|integer
  */
 function smntcs_admin_maintenance_sanitize_integer( $input ) {
-	return ( is_int( $input ) ? $input : null );
+	if ( is_numeric( $input ) ) {
+		return absint( $input );
+	} else {
+		return new WP_Error( 'admin-maintenance', '¯\_(ツ)_/¯' );
+	}
 }
 
 /**
@@ -144,11 +147,39 @@ add_action( 'authenticate', 'smntcs_admin_maintenance_enqueue', 20, 3 );
  * @return Null|WP_User|WP_Error
  */
 function smntcs_admin_maintenance_enqueue( $user, $username, $password ) {
-	if ( get_option( 'smntcs_admin_maintenance_enable' ) ) {
-		if ( isset( $user->ID ) && get_option( 'smntcs_admin_maintenance_uid' ) !== $user->ID ) {
+	if ( true === get_option( 'smntcs_admin_maintenance_enable' ) ) {
+		if ( isset( $user->ID ) && get_option( 'smntcs_admin_maintenance_uid' ) !== (int) $user->ID ) {
 			$user = new WP_Error( 'admin-maintenance', __( 'The <strong>Administration Screens</strong> are currently in maintenance mode. Please try again later.', 'smntcs-admin-maintenance' ) );
 		}
 	}
 
 	return $user;
+}
+
+add_filter( 'option_smntcs_admin_maintenance_enable', 'force_bool' );
+/**
+ * Convert numeric character to boolean
+ *
+ * @param string $value The value to be casted.
+ *
+ * @return boolean
+ */
+function force_bool( $value ) {
+	if ( is_numeric( $value ) ) {
+		return (bool) $value;
+	}
+}
+
+add_filter( 'option_smntcs_admin_maintenance_uid', 'force_int' );
+/**
+ * Convert numeric character to integer
+ *
+ * @param string $value The value to be casted.
+ *
+ * @return int
+ */
+function force_int( $value ) {
+	if ( is_numeric( $value ) ) {
+		return (int) $value;
+	}
 }
