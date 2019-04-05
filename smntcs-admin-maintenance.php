@@ -67,9 +67,10 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 	$wp_customize->add_control(
 		'smntcs_admin_maintenance_enable',
 		array(
-			'label'   => __( 'Enable Admin Maintenance', 'smntcs-admin-maintenance' ),
-			'section' => 'smntcs_admin_maintenance_section',
-			'type'    => 'checkbox',
+			'label'             => __( 'Enable Admin Maintenance', 'smntcs-admin-maintenance' ),
+			'section'           => 'smntcs_admin_maintenance_section',
+			'type'              => 'checkbox',
+			'callback_function' => 'smntcs_admin_maintenance_sanitize_checkbox',
 		)
 	);
 
@@ -78,18 +79,42 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 		array(
 			'default' => '',
 			'type'    => 'option',
+
 		)
 	);
 
 	$wp_customize->add_control(
 		'smntcs_admin_maintenance_uid',
 		array(
-			'label'   => __( 'Grant access to', 'smntcs-admin-maintenance' ),
-			'section' => 'smntcs_admin_maintenance_section',
-			'type'    => 'select',
-			'choices' => $choices,
+			'label'             => __( 'Grant access to', 'smntcs-admin-maintenance' ),
+			'section'           => 'smntcs_admin_maintenance_section',
+			'type'              => 'select',
+			'choices'           => $choices,
+			'callback_function' => 'smntcs_admin_maintenance_sanitize_integer',
 		)
 	);
+}
+
+/**
+ * Sanitize customizer integer input
+ *
+ * @param bool $input The input to check.
+ *
+ * @return null\integer
+ */
+function smntcs_admin_maintenance_sanitize_integer( $input ) {
+	return ( is_int( $input ) ? $input : null );
+}
+
+/**
+ * Sanitize customizer checkbox input
+ *
+ * @param bool $input The input to check.
+ *
+ * @return bool
+ */
+function smntcs_admin_maintenance_sanitize_checkbox( $input ) {
+	return ( isset( $input ) ? true : false );
 }
 
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'smntcs_admin_maintenance_settings_link' );
