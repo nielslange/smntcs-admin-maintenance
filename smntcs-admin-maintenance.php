@@ -1,7 +1,5 @@
 <?php
 /**
- * Template to display the blog category pages.
- *
  * Plugin Name: SMNTCS Admin Maintenance
  * Plugin URI: https://github.com/nielslange/smntcs-admin-maintenance
  * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
