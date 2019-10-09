@@ -21,19 +21,20 @@ Enables admins to put the <a href="https://codex.wordpress.org/Administration_Sc
 
 ### 1.5
 
-* Tested up to 5.2
+* Test up to 5.2
+* Update GPLv2 to GPLv3
 
 ### 1.4
 
-* Refactored based on PHPCS and WPCS
+* Refactor based on PHP Coding Standards and WordPress Coding Standards
 
 ### 1.3
 
-* Tested up to 5.1
+* Test up to 5.1
 
 ### 1.2
 
-* README.md
+* Add README.md
 
 ### 1.1
 
