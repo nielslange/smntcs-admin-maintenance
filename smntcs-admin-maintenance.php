@@ -7,18 +7,18 @@
  * Author URI: https://nielslange.com
  * Text Domain: smntcs-wapuu-widget
  * Domain Path: /languages/
- * Version: 1.5
+ * Version: 1.6
  * Requires at least: 3.4
  * Requires PHP: 5.6
- * Tested up to: 5.2
- * License: GPL2+
+ * Tested up to: 5.3
+ * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
  * @category   Plugin
  * @package    WordPress
  * @subpackage SMNTCS Admin Maintenance
  * @author     Niels Lange <info@nielslange.de>
- * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @license    GPL3+ https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
