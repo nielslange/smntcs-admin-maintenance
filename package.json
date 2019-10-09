@@ -17,8 +17,6 @@
 	"bugs": {
 		"url": "https://github.com/nielslange/smntcs-admin-maintenance/issues"
 	},
-	"devDependencies": {
-	},
 	"scripts": {
 		"lint:pkg-json": "wp-scripts lint-pkg-json"
 	}
