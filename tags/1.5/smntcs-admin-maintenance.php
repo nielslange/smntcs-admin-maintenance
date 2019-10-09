@@ -5,7 +5,7 @@
  * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
  * Author: Niels Lange
  * Author URI: https://nielslange.com
- * Text Domain: smntcs-wapuu-widget
+ * Text Domain: smntcs-admin-maintenance
  * Domain Path: /languages/
  * Version: 1.5
  * Requires at least: 3.4
@@ -14,29 +14,30 @@
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
- * @category   Plugin
- * @package    WordPress
+ * @package WordPress
  * @subpackage SMNTCS Admin Maintenance
- * @author     Niels Lange <info@nielslange.de>
- * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @author Niels Lange <info@nielslange.de>
  */
 
 /**
  * Avoid direct plugin access
+ *
+ * @since 1.0.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '¯\_(ツ)_/¯' );
 }
 
-add_action( 'plugins_loaded', 'smntcs_admin_maintenance_load_textdomain' );
 /**
  * Load text domain
+ *
+ * @since 1.0.0
  */
 function smntcs_admin_maintenance_load_textdomain() {
 	load_plugin_textdomain( 'smntcs-admin-maintenance', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
+add_action( 'plugins_loaded', 'smntcs_admin_maintenance_load_textdomain' );
 
-add_action( 'customize_register', 'smntcs_admin_maintenance_register_customize' );
 /**
  * Enhance customizer
  *
@@ -93,13 +94,14 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 		)
 	);
 }
+add_action( 'customize_register', 'smntcs_admin_maintenance_register_customize' );
 
 /**
  * Sanitize customizer integer input
  *
- * @param bool $input The input to check.
- *
- * @return null|integer
+ * @since 1.4.0
+ * @param int $input The number to sanitize.
+ * @return int|object The sanitized number or the WP_Error() object.
  */
 function smntcs_admin_maintenance_sanitize_integer( $input ) {
 	if ( is_numeric( $input ) ) {
@@ -112,21 +114,47 @@ function smntcs_admin_maintenance_sanitize_integer( $input ) {
 /**
  * Sanitize customizer checkbox input
  *
- * @param bool $input The input to check.
- *
- * @return bool
+ * @since 1.4.0
+ * @param bool $input The boolean to sanitize.
+ * @return bool|object The sanitized boolean or the WP_Error() object.
  */
 function smntcs_admin_maintenance_sanitize_checkbox( $input ) {
 	return ( isset( $input ) ? true : false );
 }
 
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'smntcs_admin_maintenance_settings_link' );
+/**
+ * Convert numeric character to integer
+ *
+ * @since 1.4.0
+ * @param mixed $value The mixed input.
+ * @return int The numeric output.
+ */
+function force_int( $value ) {
+	if ( is_numeric( $value ) ) {
+		return (int) $value;
+	}
+}
+add_filter( 'option_smntcs_admin_maintenance_uid', 'force_int' );
+
+/**
+ * Convert numeric character to boolean
+ *
+ * @param mixed $value The mixed input.
+ * @return bool The boolean output.
+ */
+function force_bool( $value ) {
+	if ( is_numeric( $value ) ) {
+		return (bool) $value;
+	}
+}
+add_filter( 'option_smntcs_admin_maintenance_enable', 'force_bool' );
+
 /**
  * Add settings link on plugin page
  *
- * @param string $links The settings link on the plugin page.
- *
- * @return mixed
+ * @since 1.0.0
+ * @param array $links The original array with customizer links.
+ * @return array $links The updated array with customizer links.
  */
 function smntcs_admin_maintenance_settings_link( $links ) {
 	$admin_url     = admin_url( 'customize.php?autofocus[control]=smntcs_admin_maintenance_enable' );
@@ -135,16 +163,16 @@ function smntcs_admin_maintenance_settings_link( $links ) {
 
 	return $links;
 }
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'smntcs_admin_maintenance_settings_link' );
 
-add_action( 'authenticate', 'smntcs_admin_maintenance_enqueue', 20, 3 );
 /**
  * Handle authentication
  *
- * @param Null|WP_User|WP_Error $user The user object.
- * @param string                $username The user's username.
- * @param string                $password The user's password.
- *
- * @return Null|WP_User|WP_Error
+ * @since 1.0.0
+ * @param object $user The original WP_User() or WP_Error() object.
+ * @param string $username The user's username.
+ * @param string $password The user's password.
+ * @return object $user The updated WP_User() or WP_Error() object.
  */
 function smntcs_admin_maintenance_enqueue( $user, $username, $password ) {
 	if ( true === get_option( 'smntcs_admin_maintenance_enable' ) ) {
@@ -155,31 +183,4 @@ function smntcs_admin_maintenance_enqueue( $user, $username, $password ) {
 
 	return $user;
 }
-
-add_filter( 'option_smntcs_admin_maintenance_enable', 'force_bool' );
-/**
- * Convert numeric character to boolean
- *
- * @param string $value The value to be casted.
- *
- * @return boolean
- */
-function force_bool( $value ) {
-	if ( is_numeric( $value ) ) {
-		return (bool) $value;
-	}
-}
-
-add_filter( 'option_smntcs_admin_maintenance_uid', 'force_int' );
-/**
- * Convert numeric character to integer
- *
- * @param string $value The value to be casted.
- *
- * @return int
- */
-function force_int( $value ) {
-	if ( is_numeric( $value ) ) {
-		return (int) $value;
-	}
-}
+add_action( 'authenticate', 'smntcs_admin_maintenance_enqueue', 20, 3 );
