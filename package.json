@@ -1,0 +1,25 @@
+{
+	"name": "smntcs-admin-maintenance",
+	"version": "1.0.0",
+	"description": "Enables admins to put the Administration Screen into maintenance mode",
+	"author": "Niels Lange",
+	"license": "GPL-3.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Plugin",
+		"SMNTCS Admin Maintenance"
+	],
+	"homepage": "https://github.com/nielslange/smntcs-admin-maintenance#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nielslange/smntcs-admin-maintenance.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nielslange/smntcs-admin-maintenance/issues"
+	},
+	"devDependencies": {
+	},
+	"scripts": {
+		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	}
+}
