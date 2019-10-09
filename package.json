@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Enables admins to put the Administration Screen into maintenance mode",
 	"author": "Niels Lange",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",
 		"Plugin",
