@@ -4,9 +4,9 @@ Contributors: nielslange
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VELSE6W88MXJA
 Tags: admin maintenance, admin, maintenance, maintenance mode
 Requires at least: 3.4
+Tested up to: 5.3
 Requires PHP: 5.6
-Tested up to: 5.2
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
