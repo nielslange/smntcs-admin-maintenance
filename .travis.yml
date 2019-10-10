@@ -53,7 +53,7 @@ script:
 branches:
   only:
   # Enable Travis hook on tags (there is regular expression for semver tag)*
-  - "/\\d\\.\\d\\.\\d/"
+  - "/\\d\\.\\d/"
 
 # Enable Travis deployment
 deploy:
