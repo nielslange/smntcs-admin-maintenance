@@ -19,6 +19,10 @@ Enables admins to put the <a href="https://codex.wordpress.org/Administration_Sc
 
 ## Changelog
 
+### 1.6
+
+* Test up to 5.3
+
 ### 1.5
 
 * Test up to 5.2
