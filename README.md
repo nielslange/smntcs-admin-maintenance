@@ -3,7 +3,6 @@
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level)
 [![Build Status](https://api.travis-ci.com/nielslange/smntcs-admin-maintenance.svg?branch=master)](https://api.travis-ci.com/nielslange/smntcs-admin-maintenance)
 [![GPLv3 License](https://img.shields.io/github/license/nielslange/smntcs-admin-maintenance.svg)](https://www.gnu.org/licenses/gpl.html)
-![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg)
 [![Compatible to WordPress version](https://plugintests.com/plugins/smntcs-admin-maintenance/wp-badge.svg)](https://plugintests.com/plugins/smntcs-admin-maintenance/latest)
 [![Compatible to PHP version](https://plugintests.com/plugins/smntcs-admin-maintenance/php-badge.svg)](https://plugintests.com/plugins/smntcs-admin-maintenance/latest)
 [![Downloads](https://img.shields.io/wordpress/plugin/dt/smntcs-admin-maintenance.svg)](https://wordpress.org/plugins/smntcs-admin-maintenance/)
