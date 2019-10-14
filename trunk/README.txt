@@ -38,10 +38,10 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 * Tested up to 5.1
 
 = 1.2 =
-* README.md
+* Added README.md
 
 = 1.1 =
-* Add language support
+* Added language support
 
 = 1.0 =
 * Initial release
