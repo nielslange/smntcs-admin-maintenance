@@ -9,7 +9,7 @@
 [![Plugin Version](https://img.shields.io/wordpress/plugin/v/smntcs-admin-maintenance.svg)](https://wordpress.org/plugins/smntcs-admin-maintenance/)
 [![Tag Version](https://img.shields.io/github/tag/nielslange/smntcs-admin-maintenance.svg)](https://wordpress.org/plugins/smntcs-admin-maintenance/)
 
-Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
+Enables admins to put the <a href="https://wordpress.org/support/article/administration-screens/" target="_blank">Administration Screens</a> into maintenance mode
 
 ## Installation
 
