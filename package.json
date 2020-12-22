@@ -18,9 +18,14 @@
 		"url": "https://github.com/nielslange/smntcs-admin-maintenance/issues"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^5.0.0"
+		"@wordpress/env": "^3.0.0",
+		"@wordpress/scripts": "^12.6.0",
+		"cypress": "^6.2.0"
 	},
 	"scripts": {
-		"lint:pkg-json": "wp-scripts lint-pkg-json"
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"test-gui": "cypress open",
+		"test": "cypress run --headless --browser chrome",
+		"wp-env": "wp-env"
 	}
 }
