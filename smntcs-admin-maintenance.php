@@ -4,14 +4,15 @@
  * Plugin URI: https://github.com/nielslange/smntcs-admin-maintenance
  * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
  * Author: Niels Lange
- * Author URI: https://nielslange.com
+ * Author URI: https://nielslange.de
  * Text Domain: smntcs-admin-maintenance
  * Domain Path: /languages/
- * Version: 1.0
+ * Version: 1.7
  * Requires at least: 3.4
- * Tested up to: 4.9
- * License: GPLv2
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires PHP: 5.6
+ * Tested up to: 5.6
+ * License: GPL3+
+ * License URI: https://www.gnu.org/licenses/gpl.html
  *
  * @package WordPress
  * @subpackage SMNTCS Admin Maintenance
@@ -24,7 +25,7 @@
  * @since 1.0.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	die( '¯\_(⊙︿⊙)_/¯' );
+	die( '¯\_(ツ)_/¯' );
 }
 
 /**
@@ -40,9 +41,7 @@ add_action( 'plugins_loaded', 'smntcs_admin_maintenance_load_textdomain' );
 /**
  * Enhance customizer
  *
- * @since 1.0.0
- * @param object $wp_customize The customizer object.
- * @return void
+ * @param WP_Customize_Manager $wp_customize The instance of the WP_Customize_Manager class.
  */
 function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 	$users = get_users( array( 'roles' => 'administrator' ) );
@@ -61,8 +60,9 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 	$wp_customize->add_setting(
 		'smntcs_admin_maintenance_enable',
 		array(
-			'default' => false,
-			'type'    => 'option',
+			'default'           => false,
+			'type'              => 'option',
+			'callback_function' => 'smntcs_admin_maintenance_sanitize_checkbox',
 		)
 	);
 
@@ -78,8 +78,9 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 	$wp_customize->add_setting(
 		'smntcs_admin_maintenance_uid',
 		array(
-			'default' => '',
-			'type'    => 'option',
+			'default'           => '',
+			'type'              => 'option',
+			'callback_function' => 'smntcs_admin_maintenance_sanitize_integer',
 		)
 	);
 
@@ -94,6 +95,59 @@ function smntcs_admin_maintenance_register_customize( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'smntcs_admin_maintenance_register_customize' );
+
+/**
+ * Sanitize customizer integer input
+ *
+ * @since 1.4.0
+ * @param int $input The number to sanitize.
+ * @return int|object The sanitized number or the WP_Error() object.
+ */
+function smntcs_admin_maintenance_sanitize_integer( $input ) {
+	if ( is_numeric( $input ) ) {
+		return absint( $input );
+	} else {
+		return new WP_Error( 'admin-maintenance', '¯\_(ツ)_/¯' );
+	}
+}
+
+/**
+ * Sanitize customizer checkbox input
+ *
+ * @since 1.4.0
+ * @param bool $input The boolean to sanitize.
+ * @return bool|object The sanitized boolean or the WP_Error() object.
+ */
+function smntcs_admin_maintenance_sanitize_checkbox( $input ) {
+	return ( isset( $input ) ? true : false );
+}
+
+/**
+ * Convert numeric character to integer
+ *
+ * @since 1.4.0
+ * @param mixed $value The mixed input.
+ * @return int The numeric output.
+ */
+function force_int( $value ) {
+	if ( is_numeric( $value ) ) {
+		return (int) $value;
+	}
+}
+add_filter( 'option_smntcs_admin_maintenance_uid', 'force_int' );
+
+/**
+ * Convert numeric character to boolean
+ *
+ * @param mixed $value The mixed input.
+ * @return bool The boolean output.
+ */
+function force_bool( $value ) {
+	if ( is_numeric( $value ) ) {
+		return (bool) $value;
+	}
+}
+add_filter( 'option_smntcs_admin_maintenance_enable', 'force_bool' );
 
 /**
  * Add settings link on plugin page
@@ -121,8 +175,8 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'smntcs_admin_
  * @return object $user The updated WP_User() or WP_Error() object.
  */
 function smntcs_admin_maintenance_enqueue( $user, $username, $password ) {
-	if ( get_option( 'smntcs_admin_maintenance_enable' ) ) {
-		if ( isset( $user->ID ) && get_option( 'smntcs_admin_maintenance_uid' ) !== $user->ID ) {
+	if ( true === get_option( 'smntcs_admin_maintenance_enable' ) ) {
+		if ( isset( $user->ID ) && get_option( 'smntcs_admin_maintenance_uid' ) !== (int) $user->ID ) {
 			$user = new WP_Error( 'admin-maintenance', __( 'The <strong>Administration Screens</strong> are currently in maintenance mode. Please try again later.', 'smntcs-admin-maintenance' ) );
 		}
 	}

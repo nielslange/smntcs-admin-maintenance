@@ -1,3 +1,6 @@
 .DS_Store
 .idea
 .svn
+.vscode
+/node_modules
+/vendor
