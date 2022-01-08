@@ -13,9 +13,15 @@
  * Requires at least: 3.4
  * License: GPLv2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @category   Plugin
+ * @package    WordPress
+ * @subpackage SMNTCS Admin Maintenance
+ * @author     Niels Lange <info@nielslange.de>
+ * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 
-// Avoid direct plugin access
+// Avoid direct plugin access.
 defined( 'ABSPATH' ) || exit;
 
 /**
