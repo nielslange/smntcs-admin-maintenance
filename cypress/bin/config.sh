@@ -1,0 +1,1 @@
+wp-env run cli "wp user create editor editor@example.com --user_pass='editor'"

@@ -1,0 +1,9 @@
+path: ./
+jobs: 10
+cache: build/phplint.cache
+extensions:
+  - php
+exclude:
+  - node_modules
+  - vendor
+warning: false
