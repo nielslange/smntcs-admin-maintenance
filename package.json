@@ -27,6 +27,6 @@
 		"test:e2e": "cypress run --headless --browser chrome",
 		"test:e2e-dev": "cypress open",
 		"wp-env": "wp-env",
-		"wp-env:config": "sh ./cypress/bin/config.sh"
+		"wp-env:config": "wp-env run cli \"wp user create editor editor@example.com --user_pass='editor'\""
 	}
 }
