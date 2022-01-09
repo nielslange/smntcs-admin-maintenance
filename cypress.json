@@ -1,4 +1,5 @@
 {
 	"screenshots": false,
-	"video": false
+	"video": false,
+	"wordpressPort": "8888"
 }
