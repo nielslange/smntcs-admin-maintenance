@@ -6,37 +6,23 @@
  * Author: Niels Lange
  * Author URI: https://nielslange.de
  * Text Domain: smntcs-admin-maintenance
- * Domain Path: /languages/
  * Version: 1.7
- * Requires at least: 3.4
- * Requires PHP: 5.6
+ * Stable tag: 1.7
  * Tested up to: 5.6
- * License: GPL3+
- * License URI: https://www.gnu.org/licenses/gpl.html
+ * Requires PHP: 5.6
+ * Requires at least: 3.4
+ * License: GPLv2+
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
- * @package WordPress
+ * @category   Plugin
+ * @package    WordPress
  * @subpackage SMNTCS Admin Maintenance
- * @author Niels Lange <info@nielslange.de>
+ * @author     Niels Lange <info@nielslange.de>
+ * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 
-/**
- * Avoid direct plugin access
- *
- * @since 1.0.0
- */
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '¯\_(ツ)_/¯' );
-}
-
-/**
- * Load text domain
- *
- * @since 1.0.0
- */
-function smntcs_admin_maintenance_load_textdomain() {
-	load_plugin_textdomain( 'smntcs-admin-maintenance', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-add_action( 'plugins_loaded', 'smntcs_admin_maintenance_load_textdomain' );
+// Avoid direct plugin access.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Enhance customizer
@@ -99,7 +85,6 @@ add_action( 'customize_register', 'smntcs_admin_maintenance_register_customize' 
 /**
  * Sanitize customizer integer input
  *
- * @since 1.4.0
  * @param int $input The number to sanitize.
  * @return int|object The sanitized number or the WP_Error() object.
  */
@@ -114,7 +99,6 @@ function smntcs_admin_maintenance_sanitize_integer( $input ) {
 /**
  * Sanitize customizer checkbox input
  *
- * @since 1.4.0
  * @param bool $input The boolean to sanitize.
  * @return bool|object The sanitized boolean or the WP_Error() object.
  */
@@ -125,7 +109,6 @@ function smntcs_admin_maintenance_sanitize_checkbox( $input ) {
 /**
  * Convert numeric character to integer
  *
- * @since 1.4.0
  * @param mixed $value The mixed input.
  * @return int The numeric output.
  */
@@ -152,7 +135,6 @@ add_filter( 'option_smntcs_admin_maintenance_enable', 'force_bool' );
 /**
  * Add settings link on plugin page
  *
- * @since 1.0.0
  * @param array $links The original array with customizer links.
  * @return array $links The updated array with customizer links.
  */
@@ -168,7 +150,6 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'smntcs_admin_
 /**
  * Handle authentication
  *
- * @since 1.0.0
  * @param object $user The original WP_User() or WP_Error() object.
  * @param string $username The user's username.
  * @param string $password The user's password.

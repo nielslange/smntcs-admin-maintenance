@@ -3,12 +3,13 @@
 Contributors: nielslange
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VELSE6W88MXJA
 Tags: admin maintenance, admin, maintenance, maintenance mode
-Requires at least: 3.4
+Version: 1.7
+Stable tag: 1.7
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.7
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl.html
+Requires at least: 3.4
+License: GPLv2+
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
 
