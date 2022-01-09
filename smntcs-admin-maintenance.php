@@ -6,9 +6,9 @@
  * Author: Niels Lange
  * Author URI: https://nielslange.de
  * Text Domain: smntcs-admin-maintenance
- * Version: 1.7
- * Stable tag: 1.7
- * Tested up to: 5.6
+ * Version: 1.8
+ * Stable tag: 1.8
+ * Tested up to: 5.8
  * Requires PHP: 5.6
  * Requires at least: 3.4
  * License: GPLv2+
