@@ -13,7 +13,7 @@ Cypress.Commands.add( 'loginAsEditor', () => {
 } );
 
 Cypress.Commands.add( 'createEditorAccount', () => {
-	cy.visit( 'http://localhost:8888/wp-admin/user-new.php' ).wait( 500 );
+	cy.visit( 'http://localhost:8888/wp-admin/user-new.php' ).wait( 1000 );
 	cy.get( "input[id='user_login']" ).type( 'editor' );
 	cy.get( "input[id='email']" ).type( 'editor@example.com' );
 	cy.get( "input[id='pass1']" ).clear().type( 'editor' ).wait( 500 );

@@ -58,4 +58,4 @@ jobs:
                   start: npm run wp-env start
                   wait-on: 'http://localhost:8888'
                   browser: chrome
-                  headless: true
+                  headless: false
