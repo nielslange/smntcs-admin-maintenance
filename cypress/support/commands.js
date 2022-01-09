@@ -16,7 +16,7 @@ Cypress.Commands.add( 'createEditorAccount', () => {
 	cy.visit( 'http://localhost:8888/wp-admin/user-new.php' ).wait( 500 );
 	cy.get( "input[id='user_login']" ).type( 'editor' );
 	cy.get( "input[id='email']" ).type( 'editor@example.com' );
-	cy.get( "input[id='pass1']" ).clear().type( 'editor' );
+	cy.get( "input[id='pass1']" ).clear().type( 'editor' ).wait( 500 );
 	cy.get( "input[class='pw-checkbox']" ).check();
 	cy.get( 'input[id="createusersub"]' ).click();
 } );
