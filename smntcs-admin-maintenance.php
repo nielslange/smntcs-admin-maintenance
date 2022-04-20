@@ -6,10 +6,10 @@
  * Author: Niels Lange
  * Author URI: https://nielslange.de
  * Text Domain: smntcs-admin-maintenance
- * Version: 1.8
- * Stable tag: 1.8
- * Tested up to: 5.8
- * Requires PHP: 5.6
+ * Version: 1.9
+ * Stable tag: 1.9
+ * Tested up to: 5.9
+ * Requires PHP: 7.4
  * Requires at least: 3.4
  * License: GPLv2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html

@@ -23,6 +23,10 @@ You can find the plugin on https://wordpress.org/plugins/smntcs-admin-maintenanc
 
 ## Changelog
 
+### 1.9 (2022.04.20)
+
+-   Tested up to 5.9
+
 ### 1.8 (2022.01.09)
 
 -   Tested up to 5.8
