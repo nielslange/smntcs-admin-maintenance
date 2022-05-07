@@ -27,7 +27,7 @@
 		"phplint": "composer phplint",
 		"test:e2e": "cypress run --headless --browser chrome",
 		"test:e2e-dev": "cypress open",
-		"test:e2e-config": "wp-env run cli 'wp theme install storefront --activate'",
-		"wp-env": "wp-env"
+		"wp-env": "wp-env",
+		"wp-env:config": "wp-env run cli 'wp theme install storefront --activate'"
 	}
 }
