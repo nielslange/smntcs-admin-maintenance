@@ -2,14 +2,14 @@
 /**
  * Plugin Name: SMNTCS Admin Maintenance
  * Plugin URI: https://github.com/nielslange/smntcs-admin-maintenance
- * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
+ * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode.
  * Author: Niels Lange
  * Author URI: https://nielslange.de
  * Text Domain: smntcs-admin-maintenance
- * Version: 1.9
- * Stable tag: 1.9
- * Tested up to: 5.9
- * Requires PHP: 7.4
+ * Version: 1.10
+ * Stable tag: 1.10
+ * Tested up to: 6.0
+ * Requires PHP: 5.6
  * Requires at least: 3.4
  * License: GPLv2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
