@@ -28,6 +28,7 @@
 		"test:e2e": "cypress run --headless --browser chrome",
 		"test:e2e-dev": "cypress open",
 		"wp-env": "wp-env",
-		"wp-env:config": "wp-env run cli 'wp theme install storefront --activate'"
+		"wp-env:config": "wp-env run cli 'wp theme install storefront --activate'",
+		"wp-env:rc": "wp-env run cli 'wp core update --version=6.0-RC1 && wp core update --version=6.0-RC1 --force'"
 	}
 }
