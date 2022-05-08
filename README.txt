@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: admin maintenance, admin, maintenance, maintenance mode
 Version: 1.10
 Stable tag: 1.10
-Test up to: 6.0
+Tested up to: 6.0
 Requires PHP: 5.6
 Requires at least: 3.4
 License: GPLv2+
