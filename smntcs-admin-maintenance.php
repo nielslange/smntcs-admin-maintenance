@@ -8,7 +8,6 @@
  * Text Domain: smntcs-admin-maintenance
  * Version: 1.10
  * Stable tag: 1.10
- * Tested up to: 6.0
  * Requires PHP: 5.6
  * Requires at least: 3.4
  * License: GPLv2+
