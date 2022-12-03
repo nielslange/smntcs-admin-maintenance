@@ -1,15 +1,13 @@
 === SMNTCS Admin Maintenance ===
 
-Contributors: nielslange
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VELSE6W88MXJA
-Tags: admin maintenance, admin, maintenance, maintenance mode
-Version: 1.10
-Stable tag: 1.10
-Tested up to: 6.0
-Requires PHP: 5.6
-Requires at least: 3.4
-License: GPLv2+
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Contributors:       nielslange
+Tags:               Admin Maintenance, Admin, Maintenance, Maintenance Mode
+Stable tag:         2.0
+Tested up to:       6.1
+Requires PHP:       5.6
+Requires at least:  3.4
+License:            GPL v2 or later
+License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
 Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
 
@@ -25,37 +23,52 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 
 == Changelog ==
 
+= 2.0 (2022.12.03) =
+
+- Test up to WP 6.1
+
 = 1.10 (2022.05.07) =
-* Test up to 6.0
+
+- Test up to WP 6.0
 
 = 1.9 (2022.04.20) =
-* Test up to 5.9
+
+- Test up to WP 5.9
 
 = 1.8 (2022.01.09) =
-* Test up to 5.8
+
+- Test up to WP 5.8
 
 = 1.7 (2020.12.22) =
-* Added e2e-tests
-* Test up to 5.6
+
+- Added e2e-tests
+- Test up to WP 5.6
 
 = 1.6 (2019.10.13) =
-* Test up to 5.3
+
+- Test up to WP 5.3
 
 = 1.5 (2019.05.13) =
-* Test up to 5.2
-* Update GPLv2 to GPLv3
+
+- Test up to WP 5.2
+- Update GPLv2 to GPLv3
 
 = 1.4 (2019.04.04) =
-* Refactored based on PHPCS and WPCS
+
+- Refactored based on PHPCS and WPCS
 
 = 1.3 (2019.03.20) =
-* Test up to 5.1
+
+- Test up to WP 5.1
 
 = 1.2 (2018.03.18) =
-* Added README.md
+
+- Added README.md
 
 = 1.1 (2018.03.18) =
-* Added language support
+
+- Added language support
 
 = 1.0 (2018.03.18) =
-* Initial release
+
+- Initial release

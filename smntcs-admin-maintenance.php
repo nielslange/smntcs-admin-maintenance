@@ -1,26 +1,20 @@
 <?php
 /**
- * Plugin Name: SMNTCS Admin Maintenance
- * Plugin URI: https://github.com/nielslange/smntcs-admin-maintenance
- * Description: Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode.
- * Author: Niels Lange
- * Author URI: https://nielslange.de
- * Text Domain: smntcs-admin-maintenance
- * Version: 1.10
- * Stable tag: 1.10
- * Requires PHP: 5.6
- * Requires at least: 3.4
- * License: GPLv2+
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin Name:           SMNTCS Admin Maintenance
+ * Plugin URI:            https://github.com/nielslange/smntcs-admin-maintenance
+ * Description:           Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode.
+ * Author:                Niels Lange
+ * Author URI:            https://nielslange.de
+ * Text Domain:           smntcs-admin-maintenance
+ * Version:               2.0
+ * Requires PHP:          5.6
+ * Requires at least:     3.4
+ * License:               GPL v2 or later
+ * License URI:           https://www.gnu.org/licenses/gpl-2.0.html
  *
- * @category   Plugin
- * @package    WordPress
- * @subpackage SMNTCS Admin Maintenance
- * @author     Niels Lange <info@nielslange.de>
- * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @package SMNTCS_Admin_Maintenance
  */
 
-// Avoid direct plugin access.
 defined( 'ABSPATH' ) || exit;
 
 /**
