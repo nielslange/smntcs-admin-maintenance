@@ -2,8 +2,8 @@
 
 Contributors:       nielslange
 Tags:               Admin Maintenance, Admin, Maintenance, Maintenance Mode
-Stable tag:         2.0
-Tested up to:       6.1
+Stable tag:         2.1
+Tested up to:       6.4
 Requires PHP:       5.6
 Requires at least:  3.4
 License:            GPL v2 or later
@@ -22,6 +22,10 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 3. Go to `Appearance » Customize » Admin Maintenance` and put the Administration Screens into maintenance mode if necessary.
 
 == Changelog ==
+
+= 2.1 (2023.10.15) =
+
+- Test up to WP 6.4
 
 = 2.0 (2022.12.03) =
 

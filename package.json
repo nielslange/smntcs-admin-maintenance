@@ -19,12 +19,14 @@
 		"@wordpress/env": "4.1.3",
 		"@wordpress/prettier-config": "1.1.1",
 		"cypress": "^9.5.4",
+		"npm-run-all": "4.1.5",
 		"prettier": "npm:wp-prettier@2.0.5"
 	},
 	"scripts": {
-		"phpcbf": "composer phpcbf",
-		"phpcs": "composer phpcs",
-		"phplint": "composer phplint",
+		"phpcbf": "composer run phpcbf",
+		"phpcs": "composer run phpcs",
+		"phplint": "composer run phplint",
+		"test": "npm-run-all --parallel phpcs phplint",
 		"test:e2e": "cypress run --headless --browser chrome",
 		"test:e2e-dev": "cypress open",
 		"wp-env": "wp-env",
