@@ -16,21 +16,22 @@
 		"url": "https://github.com/nielslange/smntcs-admin-maintenance/issues"
 	},
 	"devDependencies": {
-		"@wordpress/env": "4.1.3",
-		"@wordpress/prettier-config": "1.1.1",
-		"cypress": "^9.5.4",
+		"@playwright/test": "1.48.1",
+		"@types/node": "22.7.8",
+		"@wordpress/env": "10.10.0",
+		"@wordpress/prettier-config": "4.9.0",
 		"npm-run-all": "4.1.5",
-		"prettier": "npm:wp-prettier@2.0.5"
+		"prettier": "npm:wp-prettier@3.0.3"
 	},
 	"scripts": {
-		"phpcbf": "composer run phpcbf",
-		"phpcs": "composer run phpcs",
-		"phplint": "composer run phplint",
-		"test": "npm-run-all --parallel phpcs phplint",
-		"test:e2e": "cypress run --headless --browser chrome",
-		"test:e2e-dev": "cypress open",
+		"phpcbf": "composer phpcbf",
+		"phpcs": "composer phpcs",
+		"phplint": "composer phplint",
+		"psalm": "composer psalm --no-cache",
+		"test": "npm-run-all --parallel phpcs phplint psalm test:e2e",
+		"test:e2e": "npx playwright test",
+		"test:e2e-dev": "npx playwright test --ui",
 		"wp-env": "wp-env",
-		"wp-env:config": "wp-env run cli 'wp theme install storefront --activate'",
-		"wp-env:rc": "wp-env run cli 'wp core update --version=6.0-RC1 && wp core update --version=6.0-RC1 --force'"
+		"wp-env:rc": "wp-env run cli 'wp core update --version=6.2-RC1 && wp core update --version=6.2-RC1 --force'"
 	}
 }

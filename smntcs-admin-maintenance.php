@@ -6,7 +6,7 @@
  * Author:              Niels Lange
  * Author URI:          https://nielslange.de
  * Text Domain:         smntcs-admin-maintenance
- * Version:             2.2
+ * Version:             2.3
  * Requires PHP:        5.6
  * Requires at least:   3.4
  * License:             GPL v2 or later
@@ -30,7 +30,7 @@ class SMNTCS_Admin_Maintenance {
 		add_filter( 'option_smntcs_admin_maintenance_uid', array( $this, 'force_int' ) );
 		add_filter( 'option_smntcs_admin_maintenance_enable', array( $this, 'force_bool' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'settings_link' ) );
-		add_action( 'authenticate', array( $this, 'enqueue' ), 20, 3 );
+		add_filter( 'authenticate', array( $this, 'enqueue' ), 30, 1 );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class SMNTCS_Admin_Maintenance {
 	 * @param WP_Customize_Manager $wp_customize The instance of the WP_Customize_Manager class.
 	 */
 	public function register_customize( $wp_customize ) {
-		$users = get_users( array( 'roles' => 'administrator' ) );
+		$users = get_users( array( 'role' => 'administrator' ) );
 		foreach ( $users as $user ) {
 			$choices[ $user->ID ] = $user->user_nicename;
 		}
@@ -48,16 +48,16 @@ class SMNTCS_Admin_Maintenance {
 			'smntcs_admin_maintenance_section',
 			array(
 				'priority' => 500,
-				'title'    => __( 'Admin Maintenance ', 'smntcs-admin-maintenance' ),
+				'title'    => __( 'Admin Maintenance', 'smntcs-admin-maintenance' ),
 			)
 		);
 
 		$wp_customize->add_setting(
 			'smntcs_admin_maintenance_enable',
 			array(
-				'default'           => false,
+				'default'           => '',
 				'type'              => 'option',
-				'callback_function' => array( $this, 'sanitize_checkbox' ),
+				'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
 			)
 		);
 
@@ -75,7 +75,7 @@ class SMNTCS_Admin_Maintenance {
 			array(
 				'default'           => '',
 				'type'              => 'option',
-				'callback_function' => array( $this, 'sanitize_integer' ),
+				'sanitize_callback' => array( $this, 'sanitize_integer' ),
 			)
 		);
 
@@ -108,9 +108,9 @@ class SMNTCS_Admin_Maintenance {
 	 * Sanitize customizer checkbox input
 	 *
 	 * @param bool $input The boolean to sanitize.
-	 * @return bool|object The sanitized boolean or the WP_Error() object.
+	 * @return bool The sanitized boolean.
 	 */
-	public function sanitize_checkbox( $input ) {
+	public function sanitize_checkbox( bool $input ): bool {
 		return (bool) $input;
 	}
 
@@ -151,12 +151,10 @@ class SMNTCS_Admin_Maintenance {
 	/**
 	 * Handle authentication
 	 *
-	 * @param object $user The original WP_User() or WP_Error() object.
-	 * @param string $username The user's username.
-	 * @param string $password The user's password.
-	 * @return object $user The updated WP_User() or WP_Error() object.
+	 * @param WP_User|WP_Error|null $user The original WP_User() or WP_Error() object.
+	 * @return WP_User|WP_Error|null The updated WP_User() or WP_Error() object.
 	 */
-	public function enqueue( $user, $username, $password ) {
+	public function enqueue( $user ) {
 		$maintenance_enabled = get_option( 'smntcs_admin_maintenance_enable' );
 		$allowed_user_id     = get_option( 'smntcs_admin_maintenance_uid' );
 
@@ -166,7 +164,6 @@ class SMNTCS_Admin_Maintenance {
 
 		return $user;
 	}
-
 }
 
 new SMNTCS_Admin_Maintenance();

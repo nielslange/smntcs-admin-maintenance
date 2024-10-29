@@ -1,4 +1,4 @@
-name: Run PHPCS and PHPLint
+name: Run PHPCS, PHPLint, Psalm and Playwright
 
 on: [pull_request, push]
 
@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@master
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
 
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v2
@@ -29,6 +34,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v2
 
@@ -37,3 +47,63 @@ jobs:
 
       - name: Run PHPLint
         run: composer phplint
+
+  Psalm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Show PHPCS sniffs
+        run: ./vendor/bin/phpcs -i
+
+      - name: Show version info
+        run: ./vendor/bin/psalm --version
+
+      - name: Run Psalm
+        run: composer psalm
+
+  Playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm install -g pnpm && pnpm install
+
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
+
+      - name: Start WordPress environment
+        run: npm run wp-env start
+
+      - name: Wait for WordPress environment to be ready
+        run: npx wait-on http://localhost:8888
+
+      - name: Run Playwright tests
+        run: pnpm exec playwright test
+
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
