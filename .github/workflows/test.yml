@@ -8,12 +8,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+        uses: actions/checkout@v4master
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -37,12 +32,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+        uses: actions/checkout@v4master
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -63,12 +53,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+        uses: actions/checkout@v4master
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -93,12 +78,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+        uses: actions/checkout@v4master
 
       - name: Install dependencies
         run: npm install -g pnpm && pnpm install
