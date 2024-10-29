@@ -26,6 +26,7 @@ You can find the plugin on https://wordpress.org/plugins/smntcs-admin-maintenanc
 ### 2.3 (2024.10.29)
 
 -   Test up to WordPress 6.7
+-   Migrate e2e tests from Cypress to Playwright
 
 ### 2.2 (2024.10.02)
 
