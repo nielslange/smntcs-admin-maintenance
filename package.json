@@ -32,6 +32,6 @@
 		"test:e2e": "npx playwright test",
 		"test:e2e-dev": "npx playwright test --ui",
 		"wp-env": "wp-env",
-		"wp-env:rc": "wp-env run cli 'wp core update --version=6.2-RC1 && wp core update --version=6.2-RC1 --force'"
+		"wp-env:rc": "wp-env run cli sh -c 'wp core update --version=6.7-RC1 && wp core update --version=6.7-RC1 --force'"
 	}
 }

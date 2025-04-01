@@ -15,9 +15,6 @@
 			"email": "info@nielslange.de"
 		}
 	],
-	"require": {
-		"php": ">=8.2"
-	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "1.0.0",
 		"humanmade/psalm-plugin-wordpress": "3.1.1",
