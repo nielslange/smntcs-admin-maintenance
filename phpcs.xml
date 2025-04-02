@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset>
+	<description>SMNTCS Coding Standards</description>
+
+	<!-- PHPCS command line arguments -->
+	<arg value="sp"/>
+	<arg name="colors"/>
+	<arg name="parallel" value="100"/>
+	<arg name="extensions" value="php"/>
+	<arg name="cache" value=".phpcs.cache"/>
+
+	<!-- WordPress coding standards -->
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
+
+	<!-- Exclude dependency directories -->
+	<exclude-pattern>.github/*</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+
+	<!-- Array syntax configuration -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+	<rule ref="Universal.Arrays.DisallowShortArraySyntax">
+		<severity>0</severity>
+	</rule>
+
+	<!-- Check valid textdomain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="smntcs-admin-maintenance"/>
+			</property>
+		</properties>
+	</rule>
+
+</ruleset>

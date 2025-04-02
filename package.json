@@ -8,18 +8,11 @@
 		"SMNTCS Admin Maintenance"
 	],
 	"homepage": "https://github.com/nielslange/smntcs-admin-maintenance#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/nielslange/smntcs-admin-maintenance.git"
-	},
-	"bugs": {
-		"url": "https://github.com/nielslange/smntcs-admin-maintenance/issues"
-	},
 	"devDependencies": {
-		"@playwright/test": "1.48.1",
-		"@types/node": "22.7.8",
-		"@wordpress/env": "10.10.0",
-		"@wordpress/prettier-config": "4.9.0",
+		"@playwright/test": "1.51.1",
+		"@types/node": "22.13.17",
+		"@wordpress/env": "10.21.0",
+		"@wordpress/prettier-config": "4.21.0",
 		"npm-run-all": "4.1.5",
 		"prettier": "npm:wp-prettier@3.0.3"
 	},
@@ -28,10 +21,10 @@
 		"phpcs": "composer phpcs",
 		"phplint": "composer phplint",
 		"psalm": "composer psalm --no-cache",
-		"test": "npm-run-all --parallel phpcs phplint psalm test:e2e",
+		"test": "npm-run-all phpcs phplint psalm",
 		"test:e2e": "npx playwright test",
 		"test:e2e-dev": "npx playwright test --ui",
 		"wp-env": "wp-env",
-		"wp-env:rc": "wp-env run cli sh -c 'wp core update --version=6.7-RC1 && wp core update --version=6.7-RC1 --force'"
+		"wp-env:rc": "wp-env run cli sh -c 'wp core update --version=6.8-RC1 && wp core update --version=6.8-RC1 --force'"
 	}
 }

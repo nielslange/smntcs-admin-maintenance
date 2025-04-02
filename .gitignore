@@ -1,8 +1,14 @@
-.DS_Store
-.idea
-.svn
-.vscode
-/node_modules
-/vendor
-/build/phplint.cache
-/test-results
+# Dependencies
+node_modules/
+vendor/
+
+# IDE and Editor files
+.idea/*
+
+# Cache files
+**/.cache/
+*.cache
+
+# Testing and Reports
+/test-results/
+/playwright-report/

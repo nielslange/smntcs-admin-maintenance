@@ -4,6 +4,7 @@
 	xmlns="https://getpsalm.org/schema/config" xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd">
 	<projectFiles>
 		<file name="smntcs-admin-maintenance.php"/>
+		<file name="includes/class-smntcs-admin-maintenance.php"/>
 		<ignoreFiles>
 			<directory name="vendor"/>
 		</ignoreFiles>

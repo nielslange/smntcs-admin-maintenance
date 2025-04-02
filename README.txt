@@ -2,9 +2,9 @@
 
 Contributors:       nielslange
 Tags:               Admin Maintenance, Admin, Maintenance, Maintenance Mode
-Stable tag:         2.3
-Tested up to:       6.7
-Requires PHP:       5.6
+Stable tag:         2.4
+Tested up to:       6.8
+Requires PHP:       7.4
 Requires at least:  3.4
 License:            GPL v2 or later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,48 +23,51 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 
 == Changelog ==
 
+= 2.4 (2025.04.02) =
+
+- Tested up to WordPress 6.8
+
 = 2.3 (2024.10.29) =
 
-- Test up to WordPress 6.7
-- Migrate e2e tests from Cypress to Playwright
+- Tested up to WordPress 6.7
+- Migrated e2e tests from Cypress to Playwright
 
 = 2.2 (2024.10.02) =
 
-- Test up to WordPress 6.6
+- Tested up to WordPress 6.6
 
 = 2.1 (2023.10.15) =
 
-- Test up to WordPress 6.4
+- Tested up to WordPress 6.4
 
 = 2.0 (2022.12.03) =
 
-- Test up to WordPress 6.1
+- Tested up to WordPress 6.1
 
 = 1.10 (2022.05.07) =
 
-- Test up to WordPress 6.0
+- Tested up to WordPress 6.0
 
 = 1.9 (2022.04.20) =
 
-- Test up to WordPress 5.9
+- Tested up to WordPress 5.9
 
 = 1.8 (2022.01.09) =
 
-- Test up to WordPress 5.8
+- Tested up to WordPress 5.8
 
 = 1.7 (2020.12.22) =
 
-- Add e2e tests
-- Test up to WordPress 5.6
+- Tested up to WordPress 5.6
+- Added e2e tests
 
 = 1.6 (2019.10.13) =
 
-- Test up to WordPress 5.3
+- Tested up to WordPress 5.3
 
 = 1.5 (2019.05.13) =
 
-- Test up to WordPress 5.2
-- Update GPLv2 to GPLv3
+- Tested up to WordPress 5.2
 
 = 1.4 (2019.04.04) =
 
@@ -72,7 +75,7 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 
 = 1.3 (2019.03.20) =
 
-- Test up to WordPress 5.1
+- Tested up to WordPress 5.1
 
 = 1.2 (2018.03.18) =
 

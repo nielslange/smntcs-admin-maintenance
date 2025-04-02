@@ -2,6 +2,10 @@ name: Run PHPCS, PHPLint, Psalm and Playwright
 
 on: [pull_request, push]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   PHPCS:
     runs-on: ubuntu-latest

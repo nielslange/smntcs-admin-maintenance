@@ -25,8 +25,8 @@
 		"wp-coding-standards/wpcs": "3.1.0"
 	},
 	"scripts": {
-		"phpcbf": "phpcbf --standard=phpcs.dist.xml .",
-		"phpcs": "phpcs --standard=phpcs.dist.xml .",
+		"phpcbf": "phpcbf --standard=phpcs.xml .",
+		"phpcs": "phpcs --standard=phpcs.xml .",
 		"phplint": "phplint",
 		"psalm": "psalm --no-cache"
 	},
