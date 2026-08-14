@@ -23,6 +23,10 @@ You can find the plugin on [WordPress.org](https://wordpress.org/plugins/smntcs-
 
 ## Changelog
 
+### 2.5 (2026.08.14)
+
+- Tested up to WordPress 7.0
+
 ### 2.4 (2025.04.02)
 
 - Tested up to WordPress 6.8
