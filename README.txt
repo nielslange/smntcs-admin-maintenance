@@ -1,19 +1,27 @@
 === SMNTCS Admin Maintenance ===
 
 Contributors:       nielslange
-Tags:               Admin Maintenance, Admin, Maintenance, Maintenance Mode
-Stable tag:         2.5
-Tested up to:       7.0
-Requires PHP:       7.4
+Tags:               maintenance, maintenance mode, admin, dashboard, lockdown
 Requires at least:  3.4
+Tested up to:       7.1
+Requires PHP:       7.4
+Stable tag:         2.6
 License:            GPL v2 or later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
-Enables admins to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode
+Puts the WordPress admin area into maintenance mode, so only the user you choose can log in while you work on the site.
 
 == Description ==
 
-Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Administration_Screens" target="_blank">Administration Screens</a> into maintenance mode.
+SMNTCS Admin Maintenance puts the [WordPress admin area](https://wordpress.org/documentation/article/administration-screens/) into maintenance mode. While it is on, only the user you grant access can log in. Everyone else sees a message on the login screen that the admin area is in maintenance mode.
+
+This is useful when you migrate a site, run large updates or change settings that other editors should not touch in the meantime. The front end of your site stays online the whole time.
+
+= Features =
+
+* Turn admin maintenance mode on and off in the Customizer
+* Choose the one user who can still log in
+* The public site stays available
 
 == Installation ==
 
@@ -22,6 +30,11 @@ Admin Maintenance enables you to put the <a href="https://codex.wordpress.org/Ad
 3. Go to `Appearance » Customize » Admin Maintenance` and put the Administration Screens into maintenance mode if necessary.
 
 == Changelog ==
+
+= 2.6 (2026.09.26) =
+
+- Test up to WordPress 7.1
+- Update development dependencies and GitHub Actions
 
 = 2.5 (2026.08.14) =
 

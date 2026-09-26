@@ -12,3 +12,6 @@ vendor/
 # Testing and Reports
 /test-results/
 /playwright-report/
+.phplint.cache
+cypress/screenshots
+cypress/videos
