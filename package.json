@@ -9,8 +9,9 @@
 	],
 	"homepage": "https://github.com/nielslange/smntcs-admin-maintenance#readme",
 	"devDependencies": {
-		"@playwright/test": "1.63.0",
+		"@playwright/test": "1.64.1",
 		"@types/node": "^26.6.0",
+		"@wordpress/e2e-test-utils-playwright": "3.1.0",
 		"@wordpress/env": "11.16.0",
 		"@wordpress/prettier-config": "4.56.0",
 		"npm-run-all2": "^9.0.3",
@@ -22,9 +23,10 @@
 		"phplint": "composer phplint",
 		"psalm": "composer psalm --no-cache",
 		"test": "npm-run-all phpcs phplint psalm",
-		"test:e2e": "npx playwright test",
-		"test:e2e-dev": "npx playwright test --ui",
 		"wp-env": "wp-env",
-		"wp-env:rc": "wp-env run cli sh -c 'wp core update --version=6.8-RC1 && wp core update --version=6.8-RC1 --force'"
-	}
+		"wp-env:rc": "wp-env run cli sh -c 'wp core update --version=6.8-RC1 && wp core update --version=6.8-RC1 --force'",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui"
+	},
+	"packageManager": "pnpm@12.8.1"
 }
